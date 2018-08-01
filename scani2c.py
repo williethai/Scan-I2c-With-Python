@@ -30,5 +30,4 @@ for bus in range(int(args.bus_from), int(args.bus_to) + 1):
                 _line = line.split(': ')[1].replace(' ', '')
                 for j in range(0, len(_line), 2):
                         if _line[j].isdigit() or _line[j] == 'U':
-                                print ' Found i2c device at 0x{:02X}'.format((i - 1)*16 + j/2)
 				print ' Found i2c device at 0x{:02X} {:s}'.format((i - 1)*16 + j/2, ('', '(Occupied by driver)')[_line[j] == 'U'])
